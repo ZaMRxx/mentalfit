@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind - MentalFit</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="mind.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="Logo/logo.jpeg" alt="MentalFit Logo">
+                <h2>MentalFit</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mind.html" class="active">Mind</a></li>
+                <li><a href="body.html">Body</a></li>
+                <li><a href="myplan.html">My Plan</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section Mind -->
+    <section class="mind-hero">
+        <div class="container">
+            <h1 class="page-title">Kesehatan Mental</h1>
+            <p class="page-subtitle">Latih pikiranmu untuk ketenangan, konsistensi, dan refleksi diri</p>
+        </div>
+    </section>
+
+    <!-- Meditation Guide Section -->
+    <section class="meditation-section">
+        <div class="container">
+            <h2 class="section-title">🧘 Meditation Guide</h2>
+            <div class="meditation-container">
+                <div class="meditation-video">
+                    <div class="video-placeholder">
+                        <svg viewBox="0 0 200 200" class="meditation-icon">
+                            <circle cx="100" cy="100" r="80" fill="#2a2a2a" stroke="#c0c0c0" stroke-width="2"/>
+                            <circle cx="100" cy="100" r="60" fill="#1f1f1f" opacity="0.8" class="pulse-slow"/>
+                            <circle cx="100" cy="100" r="40" fill="#c0c0c0" opacity="0.6" class="pulse-medium"/>
+                            <circle cx="100" cy="100" r="20" fill="#ffffff" opacity="0.8" class="pulse-fast"/>
+                        </svg>
+                        <p>Video Meditasi Terpandu</p>
+                    </div>
+                </div>
+                <div class="meditation-controls">
+                    <h3>Panduan Meditasi 10 Menit</h3>
+                    <p>Meditasi pernapasan untuk ketenangan pikiran dan fokus mental</p>
+                    
+                    <div class="meditation-timer">
+                        <div class="timer-display" id="meditationTimer">10:00</div>
+                        <div class="timer-controls">
+                            <button class="timer-btn" id="startMeditation">Mulai</button>
+                            <button class="timer-btn secondary" id="pauseMeditation">Pause</button>
+                            <button class="timer-btn secondary" id="resetMeditation">Reset</button>
+                        </div>
+                    </div>
+
+                    <div class="meditation-instructions">
+                        <h4>Langkah-langkah:</h4>
+                        <ul>
+                            <li>Duduk dengan nyaman dan tutup mata</li>
+                            <li>Fokus pada napas masuk dan keluar</li>
+                            <li>Lepaskan pikiran yang mengganggu</li>
+                            <li>Rasakan ketenangan dalam diri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breathing Trainer Section -->
+    <section class="breathing-section">
+        <div class="container">
+            <h2 class="section-title">💨 Breathing Trainer</h2>
+            <div class="breathing-container">
+                <div class="breathing-circle-wrapper">
+                    <div class="breathing-circle" id="breathingCircle">
+                        <div class="breathing-text" id="breathingText">Klik Mulai</div>
+                    </div>
+                </div>
+                
+                <div class="breathing-controls">
+                    <h3>Latihan Pernapasan 4-7-8</h3>
+                    <p>Teknik pernapasan untuk mengurangi stres dan meningkatkan fokus</p>
+                    
+                    <div class="breathing-info">
+                        <div class="info-item">
+                            <span class="info-number">4</span>
+                            <span class="info-label">Detik Tarik Napas</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-number">7</span>
+                            <span class="info-label">Detik Tahan</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-number">8</span>
+                            <span class="info-label">Detik Hembuskan</span>
+                        </div>
+                    </div>
+
+                    <div class="breathing-counter">
+                        <span>Siklus: <strong id="breathingCycle">0</strong> / 5</span>
+                    </div>
+
+                    <div class="breathing-buttons">
+                        <button class="breath-btn" id="startBreathing">Mulai Latihan</button>
+                        <button class="breath-btn secondary" id="stopBreathing">Stop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journaling Section -->
+    <section class="journaling-section">
+        <div class="container">
+            <h2 class="section-title">📓 Journaling Harian</h2>
+            <div class="journaling-container">
+                <div class="journal-input-area">
+                    <div class="journal-header">
+                        <h3>Catatan Hari Ini</h3>
+                        <div class="journal-date" id="journalDate"></div>
+                    </div>
+
+                    <div class="mood-selector">
+                        <label>Bagaimana perasaanmu hari ini?</label>
+                        <div class="mood-options">
+                            <button class="mood-btn" data-mood="happy">😊</button>
+                            <button class="mood-btn" data-mood="neutral">😐</button>
+                            <button class="mood-btn" data-mood="sad">😔</button>
+                            <button class="mood-btn" data-mood="excited">🤩</button>
+                            <button class="mood-btn" data-mood="tired">😴</button>
+                        </div>
+                    </div>
+
+                    <textarea 
+                        id="journalText" 
+                        placeholder="Tuliskan apa yang kamu rasakan hari ini... Apa yang membuatmu bahagia? Apa yang membuatmu khawatir? Apa pencapaianmu hari ini?"
+                        rows="10"
+                    ></textarea>
+
+                    <div class="journal-actions">
+                        <button class="journal-btn" id="saveJournal">💾 Simpan Catatan</button>
+                        <button class="journal-btn secondary" id="clearJournal">🗑️ Hapus</button>
+                    </div>
+
+                    <div class="journal-status" id="journalStatus"></div>
+                </div>
+
+                <div class="journal-history">
+                    <h3>Catatan Sebelumnya</h3>
+                    <div class="journal-entries" id="journalEntries">
+                        <p class="no-entries">Belum ada catatan. Mulai menulis hari ini!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Affirmation Section -->
+    <section class="affirmation-section">
+        <div class="container">
+            <h2 class="section-title">💬 Daily Affirmation</h2>
+            <div class="affirmation-container">
+                <div class="affirmation-card">
+                    <div class="affirmation-icon">✨</div>
+                    <div class="affirmation-text" id="affirmationText">
+                        Klik tombol untuk mendapatkan afirmasi positif hari ini
+                    </div>
+                    <button class="affirmation-btn" id="generateAffirmation">
+                        🔄 Afirmasi Baru
+                    </button>
+                </div>
+
+                <div class="affirmation-benefits">
+                    <h3>Manfaat Afirmasi Positif:</h3>
+                    <ul>
+                        <li>Meningkatkan kepercayaan diri</li>
+                        <li>Mengurangi pikiran negatif</li>
+                        <li>Membangun mindset positif</li>
+                        <li>Meningkatkan motivasi harian</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="Logo/logo.jpeg" alt="MentalFit">
+                        <h3>MentalFit</h3>
+                    </div>
+                    <p>Platform digital yang menggabungkan kesehatan mental dan fisik dalam satu ekosistem.</p>
+                    <div class="footer-tagline">
+                        <strong>Gym for Mind & Body</strong>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mind.html">Mind</a></li>
+                        <li><a href="body.html">Body</a></li>
+                        <li><a href="myplan.html">My Plan</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-features">
+                    <h4>Fitur</h4>
+                    <ul>
+                        <li>🧘 Meditation Guide</li>
+                        <li>💨 Breathing Trainer</li>
+                        <li>💪 Workout Library</li>
+                        <li>📊 Progress Tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Hubungi Kami</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <span class="social-icon">📷</span> Instagram
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon">✉️</span> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MentalFit. Semua hak dilindungi.</p>
+                <p class="footer-credit">Made with 💙 for better mental & physical health</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="mind.js"></script>
+</body>
+</html>

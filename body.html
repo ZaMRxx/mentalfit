@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body - MentalFit</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="body.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="Logo/logo.jpeg" alt="MentalFit Logo">
+                <h2>MentalFit</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mind.html">Mind</a></li>
+                <li><a href="body.html" class="active">Body</a></li>
+                <li><a href="myplan.html">My Plan</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section Body -->
+    <section class="body-hero">
+        <div class="container">
+            <h1 class="page-title">Latihan Fisik</h1>
+            <p class="page-subtitle">Bangun kekuatan tubuh dan mental melalui workout terstruktur</p>
+        </div>
+    </section>
+
+    <!-- Main Content: Exercise Library + Workout Plan -->
+    <section class="body-main-section">
+        <div class="container">
+            <div class="body-layout">
+                
+                <!-- Left Side: Exercise Library -->
+                <div class="exercise-library-container">
+                    
+                    <!-- Category Filter -->
+                    <div class="category-filter">
+                        <h2 class="section-title">💪 Exercise Library</h2>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-category="all">Semua</button>
+                            <button class="filter-btn" data-category="strength">🏋️ Strength</button>
+                            <button class="filter-btn" data-category="yoga">🧘 Yoga</button>
+                            <button class="filter-btn" data-category="cardio">🏃 Cardio</button>
+                            <button class="filter-btn" data-category="stretch">🤸 Stretch</button>
+                        </div>
+                    </div>
+
+                    <!-- Exercise Grid -->
+                    <div class="exercise-grid" id="exerciseGrid">
+                        <!-- Exercises will be loaded by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right Side: My Workout Plan (Sticky) -->
+                <div class="workout-plan-sidebar">
+                    <div class="workout-plan-card">
+                        <h3>📋 My Workout Plan</h3>
+                        <div class="plan-exercises" id="planExercises">
+                            <p class="no-plan">Belum ada latihan. Tambahkan dari library!</p>
+                        </div>
+                        <div class="plan-summary" id="planSummary" style="display: none;">
+                            <div class="summary-item">
+                                <span>Total Exercises:</span>
+                                <strong id="totalExercises">0</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Est. Time:</span>
+                                <strong id="estimatedTime">0 min</strong>
+                            </div>
+                        </div>
+                        <div class="plan-actions">
+                            <button class="plan-btn clear-btn" id="clearPlan">🗑️ Clear All</button>
+                            <button class="plan-btn start-btn" id="startWorkout" disabled>▶️ START WORKOUT</button>
+                        </div>
+                    </div>
+
+                    <!-- Mini Stats -->
+                    <div class="mini-stats-card">
+                        <h4>📊 This Week</h4>
+                        <div class="stat-row">
+                            <span>Workouts:</span>
+                            <strong id="weekWorkouts">0</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span>Minutes:</span>
+                            <strong id="weekMinutes">0</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span>Streak:</span>
+                            <strong id="currentStreak">0 days</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Workout Suggestions -->
+    <section class="quick-workout-section">
+        <div class="container">
+            <h2 class="section-title">🎯 Quick Workout Plans</h2>
+            <p class="section-subtitle">Pilih workout plan siap pakai untuk memulai dengan cepat</p>
+            
+            <div class="quick-workout-grid">
+                
+                <div class="quick-workout-card" data-plan="morning">
+                    <div class="quick-icon">🌅</div>
+                    <h3>Morning Energy Boost</h3>
+                    <p>15 menit • Yoga + Stretch</p>
+                    <ul class="quick-exercises">
+                        <li>Sun Salutation - 5 min</li>
+                        <li>Morning Stretch - 5 min</li>
+                        <li>Mountain Pose - 5 min</li>
+                    </ul>
+                    <button class="quick-start-btn">Quick Start</button>
+                </div>
+
+                <div class="quick-workout-card" data-plan="strength">
+                    <div class="quick-icon">💪</div>
+                    <h3>Full Body Strength</h3>
+                    <p>25 menit • Strength Training</p>
+                    <ul class="quick-exercises">
+                        <li>Push-ups - 3×15</li>
+                        <li>Squats - 4×20</li>
+                        <li>Plank - 3×60s</li>
+                    </ul>
+                    <button class="quick-start-btn">Quick Start</button>
+                </div>
+
+                <div class="quick-workout-card" data-plan="stress">
+                    <div class="quick-icon">😌</div>
+                    <h3>Stress Relief Flow</h3>
+                    <p>20 menit • Cardio + Stretch</p>
+                    <ul class="quick-exercises">
+                        <li>Slow Jogging - 10 min</li>
+                        <li>Full Body Stretch - 10 min</li>
+                    </ul>
+                    <button class="quick-start-btn">Quick Start</button>
+                </div>
+
+                <div class="quick-workout-card" data-plan="evening">
+                    <div class="quick-icon">🌙</div>
+                    <h3>Evening Wind Down</h3>
+                    <p>15 menit • Stretch + Yoga</p>
+                    <ul class="quick-exercises">
+                        <li>Recovery Stretch - 10 min</li>
+                        <li>Warrior Flow - 5 min</li>
+                    </ul>
+                    <button class="quick-start-btn">Quick Start</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Workout Timer Modal (Hidden by default) -->
+    <div class="workout-modal" id="workoutModal">
+        <div class="workout-modal-content">
+            <div class="workout-header">
+                <h2>🏋️ Workout Session</h2>
+                <button class="close-workout" id="closeWorkout">✕</button>
+            </div>
+
+            <div class="workout-progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="current-exercise-display">
+                <h3 id="currentExerciseName">Push-ups</h3>
+                <div class="exercise-details">
+                    <span id="currentSet">Set 1 of 3</span>
+                    <span class="separator">•</span>
+                    <span id="currentReps">15 reps</span>
+                </div>
+            </div>
+
+            <div class="timer-display-big" id="timerDisplay">
+                <div class="timer-label" id="timerLabel">Ready?</div>
+                <div class="timer-number" id="timerNumber">--</div>
+            </div>
+
+            <div class="workout-controls">
+                <button class="workout-control-btn" id="prevExerciseBtn" disabled>⏮️ Previous</button>
+                <button class="workout-control-btn primary" id="setCompleteBtn">✓ Set Complete</button>
+                <button class="workout-control-btn" id="nextExerciseBtn">⏭️ Skip</button>
+            </div>
+
+            <div class="workout-exercise-list">
+                <h4>Remaining Exercises:</h4>
+                <div id="remainingExercises"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise Setup Modal -->
+    <div class="setup-modal" id="setupModal">
+        <div class="setup-modal-content">
+            <h3>Setup Exercise</h3>
+            <div class="setup-exercise-name" id="setupExerciseName"></div>
+            
+            <div class="setup-form">
+                <div class="setup-field">
+                    <label>Jumlah Set:</label>
+                    <input type="number" id="setupSets" min="1" max="10" value="3">
+                </div>
+
+                <div class="setup-field">
+                    <label>Repetisi per Set:</label>
+                    <input type="number" id="setupReps" min="1" max="100" value="15">
+                </div>
+
+                <div class="setup-field">
+                    <label>Istirahat antar Set (detik):</label>
+                    <input type="number" id="setupRest" min="0" max="300" value="30">
+                </div>
+            </div>
+
+            <div class="setup-actions">
+                <button class="setup-btn cancel" id="cancelSetup">Cancel</button>
+                <button class="setup-btn confirm" id="confirmSetup">Add to Plan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="Logo/logo.jpeg" alt="MentalFit">
+                        <h3>MentalFit</h3>
+                    </div>
+                    <p>Platform digital yang menggabungkan kesehatan mental dan fisik dalam satu ekosistem.</p>
+                    <div class="footer-tagline">
+                        <strong>Gym for Mind & Body</strong>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mind.html">Mind</a></li>
+                        <li><a href="body.html">Body</a></li>
+                        <li><a href="myplan.html">My Plan</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-features">
+                    <h4>Fitur</h4>
+                    <ul>
+                        <li>🧘 Meditation Guide</li>
+                        <li>💨 Breathing Trainer</li>
+                        <li>💪 Workout Library</li>
+                        <li>📊 Progress Tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Hubungi Kami</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <span class="social-icon">📷</span> Instagram
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon">✉️</span> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MentalFit. Semua hak dilindungi.</p>
+                <p class="footer-credit">Made with 💙 for better mental & physical health</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="body.js"></script>
+</body>
+</html>

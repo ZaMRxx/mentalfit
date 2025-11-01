@@ -1,0 +1,774 @@
+/* Mind Page Specific Styles */
+
+/* Mind Hero */
+.mind-hero {
+    background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 1px solid #404040;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff, #c0c0c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Section Spacing */
+.meditation-section,
+.breathing-section,
+.journaling-section,
+.affirmation-section {
+    padding: 5rem 0;
+}
+
+.meditation-section {
+    background: #1f1f1f;
+}
+
+.breathing-section {
+    background: linear-gradient(135deg, #1a1a1a, #252525);
+}
+
+.journaling-section {
+    background: #1f1f1f;
+}
+
+.affirmation-section {
+    background: linear-gradient(135deg, #252525, #1a1a1a);
+}
+
+/* Meditation Guide */
+.meditation-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.meditation-video {
+    background: #2a2a2a;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #404040;
+}
+
+.video-placeholder {
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+}
+
+.meditation-icon {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.video-placeholder p {
+    color: #909090;
+    font-size: 1.1rem;
+}
+
+.meditation-controls h3 {
+    font-size: 2rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.meditation-controls p {
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.meditation-timer {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #404040;
+    margin-bottom: 2rem;
+}
+
+.timer-display {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #c0c0c0;
+    margin-bottom: 1.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.timer-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.timer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.3);
+}
+
+.timer-btn.secondary {
+    background: #404040;
+    color: #e0e0e0;
+}
+
+.timer-btn.secondary:hover {
+    background: #505050;
+}
+
+.timer-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.meditation-instructions {
+    background: rgba(42, 42, 42, 0.5);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 3px solid #c0c0c0;
+}
+
+.meditation-instructions h4 {
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.meditation-instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.meditation-instructions li {
+    color: #a0a0a0;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.meditation-instructions li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #c0c0c0;
+}
+
+/* Breathing Trainer */
+.breathing-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.breathing-circle-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.breathing-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+    border: 3px solid #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 30px rgba(192, 192, 192, 0.3);
+}
+
+.breathing-circle.inhale {
+    transform: scale(1.5);
+    background: linear-gradient(135deg, #3a3a3a, #2f2f2f);
+    box-shadow: 0 0 50px rgba(192, 192, 192, 0.5);
+}
+
+.breathing-circle.hold {
+    transform: scale(1.5);
+    background: linear-gradient(135deg, #4a4a4a, #3f3f3f);
+}
+
+.breathing-circle.exhale {
+    transform: scale(1);
+    background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+}
+
+.breathing-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.breathing-controls h3 {
+    font-size: 2rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.breathing-controls p {
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.breathing-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #404040;
+}
+
+.info-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #c0c0c0;
+    margin-bottom: 0.5rem;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #909090;
+}
+
+.breathing-counter {
+    background: rgba(42, 42, 42, 0.5);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #a0a0a0;
+    font-size: 1.1rem;
+}
+
+.breathing-counter strong {
+    color: #c0c0c0;
+    font-size: 1.3rem;
+}
+
+.breathing-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.breath-btn {
+    flex: 1;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.breath-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.3);
+}
+
+.breath-btn.secondary {
+    background: #404040;
+    color: #e0e0e0;
+}
+
+.breath-btn.secondary:hover {
+    background: #505050;
+}
+
+.breath-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Journaling Section */
+.journaling-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.journal-input-area {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #404040;
+}
+
+.journal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #404040;
+}
+
+.journal-header h3 {
+    font-size: 1.8rem;
+    color: #e0e0e0;
+}
+
+.journal-date {
+    color: #909090;
+    font-size: 1rem;
+}
+
+.mood-selector {
+    margin-bottom: 2rem;
+}
+
+.mood-selector label {
+    display: block;
+    color: #b0b0b0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.mood-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.mood-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    background: #1f1f1f;
+    border: 2px solid #404040;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mood-btn:hover {
+    transform: scale(1.1);
+    border-color: #c0c0c0;
+}
+
+.mood-btn.selected {
+    background: #3a3a3a;
+    border-color: #c0c0c0;
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+}
+
+#journalText {
+    width: 100%;
+    background: #1f1f1f;
+    border: 1px solid #404040;
+    border-radius: 10px;
+    padding: 1.5rem;
+    color: #e0e0e0;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.6;
+    resize: vertical;
+    margin-bottom: 1.5rem;
+}
+
+#journalText:focus {
+    outline: none;
+    border-color: #c0c0c0;
+    box-shadow: 0 0 10px rgba(192, 192, 192, 0.2);
+}
+
+.journal-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.journal-btn {
+    flex: 1;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.journal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.3);
+}
+
+.journal-btn.secondary {
+    background: #404040;
+    color: #e0e0e0;
+}
+
+.journal-btn.secondary:hover {
+    background: #505050;
+}
+
+.journal-status {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.journal-status.success {
+    background: rgba(76, 175, 80, 0.2);
+    color: #81c784;
+    border: 1px solid #81c784;
+    display: block;
+}
+
+.journal-status.error {
+    background: rgba(244, 67, 54, 0.2);
+    color: #e57373;
+    border: 1px solid #e57373;
+    display: block;
+}
+
+.journal-history {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #404040;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.journal-history h3 {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #404040;
+}
+
+.journal-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.no-entries {
+    color: #707070;
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+}
+
+.journal-entry {
+    background: #1f1f1f;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #404040;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.entry-date {
+    color: #909090;
+    font-size: 0.9rem;
+}
+
+.entry-mood {
+    font-size: 1.5rem;
+}
+
+.entry-text {
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.entry-delete {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    background: #404040;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.entry-delete:hover {
+    background: #d32f2f;
+}
+
+/* Daily Affirmation */
+.affirmation-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.affirmation-card {
+    background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+    padding: 4rem 3rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #404040;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.affirmation-icon {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.affirmation-text {
+    font-size: 1.8rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.affirmation-btn {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.affirmation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(192, 192, 192, 0.4);
+}
+
+.affirmation-benefits {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #404040;
+}
+
+.affirmation-benefits h3 {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+}
+
+.affirmation-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.affirmation-benefits li {
+    color: #a0a0a0;
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.affirmation-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #c0c0c0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Animations */
+.pulse-slow {
+    animation: pulseSlow 3s ease-in-out infinite;
+}
+
+.pulse-medium {
+    animation: pulseMedium 2s ease-in-out infinite;
+}
+
+.pulse-fast {
+    animation: pulseFast 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseSlow {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes pulseMedium {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+@keyframes pulseFast {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .meditation-container,
+    .breathing-container,
+    .journaling-container,
+    .affirmation-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .meditation-controls h3,
+    .breathing-controls h3 {
+        font-size: 1.5rem;
+    }
+
+    .timer-display {
+        font-size: 3rem;
+    }
+
+    .breathing-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .breathing-info {
+        grid-template-columns: 1fr;
+    }
+
+    .mood-options {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .journal-history {
+        max-height: 400px;
+    }
+
+    .affirmation-text {
+        font-size: 1.4rem;
+        min-height: 120px;
+    }
+
+    .breathing-buttons,
+    .journal-actions {
+        flex-direction: column;
+    }
+
+    .timer-controls {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .timer-btn,
+    .breath-btn,
+    .journal-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .meditation-section,
+    .breathing-section,
+    .journaling-section,
+    .affirmation-section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .breathing-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .breathing-text {
+        font-size: 1.2rem;
+    }
+
+    .info-number {
+        font-size: 2rem;
+    }
+
+    .affirmation-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .affirmation-text {
+        font-size: 1.2rem;
+        min-height: 100px;
+    }
+
+    .affirmation-icon {
+        font-size: 3rem;
+    }
+}

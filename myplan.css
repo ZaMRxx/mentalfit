@@ -1,0 +1,631 @@
+/* My Plan Page Specific Styles */
+
+/* Hero Section */
+.myplan-hero {
+    background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 1px solid #404040;
+}
+
+/* Welcome Section */
+.welcome-section {
+    padding: 3rem 0;
+    background: #1f1f1f;
+}
+
+.welcome-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #2a2a2a, #252525);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid #404040;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-text h2 {
+    font-size: 2rem;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-text h2 span {
+    background: linear-gradient(135deg, #ffffff, #c0c0c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.welcome-text p {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+}
+
+.welcome-date {
+    text-align: right;
+}
+
+.date-display {
+    font-size: 1.3rem;
+    color: #c0c0c0;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.time-display {
+    font-size: 2rem;
+    color: #e0e0e0;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+}
+
+/* Quote Section */
+.quote-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #1a1a1a, #252525);
+}
+
+.quote-card {
+    background: rgba(42, 42, 42, 0.5);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #404040;
+    backdrop-filter: blur(10px);
+}
+
+.quote-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.quote-author {
+    color: #909090;
+    font-size: 1rem;
+}
+
+/* MentalFit Index */
+.index-section {
+    padding: 5rem 0;
+    background: #1f1f1f;
+}
+
+.index-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.index-main {
+    text-align: center;
+}
+
+.index-circle {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 2rem;
+}
+
+.index-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(0deg);
+}
+
+.index-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.index-number {
+    display: block;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #c0c0c0;
+    line-height: 1;
+}
+
+.index-label {
+    display: block;
+    font-size: 1.5rem;
+    color: #707070;
+    margin-top: 0.5rem;
+}
+
+.index-description {
+    color: #909090;
+    font-size: 1.1rem;
+}
+
+.index-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.breakdown-item {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #404040;
+}
+
+.breakdown-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.breakdown-icon {
+    font-size: 2rem;
+}
+
+.breakdown-title {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    font-weight: 600;
+}
+
+.breakdown-bar {
+    width: 100%;
+    height: 20px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.breakdown-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.breakdown-fill.mental {
+    background: linear-gradient(90deg, #9c88ff, #7c6fcc);
+}
+
+.breakdown-fill.fitness {
+    background: linear-gradient(90deg, #66bb6a, #43a047);
+}
+
+.breakdown-value {
+    text-align: right;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #c0c0c0;
+}
+
+/* Daily Checklist */
+.checklist-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #252525, #1a1a1a);
+}
+
+.checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.checklist-card {
+    background: #2a2a2a;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #404040;
+    transition: all 0.3s;
+}
+
+.checklist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(192, 192, 192, 0.15);
+    border-color: #606060;
+}
+
+.checklist-card.completed {
+    background: linear-gradient(135deg, #2a3a2a, #253025);
+    border-color: #4caf50;
+}
+
+.check-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.checklist-card h3 {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+.checklist-card p {
+    color: #909090;
+    margin-bottom: 1.5rem;
+}
+
+.check-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.check-input {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #c0c0c0;
+}
+
+.check-label {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.start-day-container {
+    text-align: center;
+}
+
+.start-day-btn {
+    padding: 1.2rem 4rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(192, 192, 192, 0.3);
+}
+
+.start-day-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(192, 192, 192, 0.5);
+}
+
+/* Streak Section */
+.streak-section {
+    padding: 5rem 0;
+    background: #1f1f1f;
+}
+
+.streak-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.streak-main {
+    background: linear-gradient(135deg, #2a2a2a, #252525);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #404040;
+}
+
+.streak-fire {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    animation: flicker 2s ease-in-out infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.streak-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ff9800;
+    margin-bottom: 0.5rem;
+}
+
+.streak-label {
+    color: #909090;
+    font-size: 1.1rem;
+}
+
+.streak-calendar {
+    background: #2a2a2a;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #404040;
+}
+
+.streak-calendar h3 {
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    background: #1f1f1f;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #404040;
+    transition: all 0.3s;
+}
+
+.day-name {
+    font-size: 0.7rem;
+    color: #707070;
+    margin-bottom: 0.3rem;
+}
+
+.day-date {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.calendar-day.active {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    border-color: #66bb6a;
+}
+
+.calendar-day.active .day-date {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.calendar-day.today {
+    border: 2px solid #c0c0c0;
+}
+
+.streak-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-box {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #404040;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #c0c0c0;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    color: #909090;
+    font-size: 0.95rem;
+}
+
+/* Progress Section */
+.progress-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1a1a1a, #252525);
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.progress-card {
+    background: #2a2a2a;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #404040;
+}
+
+.progress-card h3 {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #404040;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #1f1f1f;
+    border-radius: 10px;
+    border: 1px solid #353535;
+}
+
+.activity-name {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+}
+
+.activity-count {
+    color: #c0c0c0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Quick Actions */
+.actions-section {
+    padding: 5rem 0;
+    background: #1f1f1f;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.action-card {
+    background: linear-gradient(135deg, #2a2a2a, #252525);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #404040;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.action-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(192, 192, 192, 0.2);
+    border-color: #606060;
+}
+
+.action-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.action-card h3 {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+.action-card p {
+    color: #909090;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .index-container {
+        grid-template-columns: 1fr;
+    }
+
+    .streak-container {
+        grid-template-columns: 1fr;
+    }
+
+    .index-circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .index-number {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .welcome-date {
+        text-align: center;
+    }
+
+    .time-display {
+        font-size: 1.5rem;
+    }
+
+    .quote-text {
+        font-size: 1.2rem;
+    }
+
+    .index-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .index-number {
+        font-size: 3rem;
+    }
+
+    .checklist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .streak-fire {
+        font-size: 4rem;
+    }
+
+    .streak-number {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .myplan-hero {
+        padding: 3rem 0;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .welcome-card {
+        padding: 2rem;
+    }
+
+    .quote-card {
+        padding: 2rem;
+    }
+
+    .start-day-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}

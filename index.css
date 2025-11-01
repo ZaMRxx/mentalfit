@@ -1,0 +1,846 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(20, 20, 20, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #404040;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo dengan Image */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.logo h2 {
+    color: #c0c0c0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #c0c0c0, #808080);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+    opacity: 0.8;
+}
+
+.wave-bg::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(192, 192, 192, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: waveMove 20s linear infinite;
+}
+
+@keyframes waveMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff, #c0c0c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(192, 192, 192, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(192, 192, 192, 0.5);
+}
+
+/* Hero Illustration */
+.hero-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo-animated {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: fadeFloat 3s ease-in-out infinite;
+    box-shadow: 0 0 25px rgba(192, 192, 192, 0.3);
+}
+
+
+@keyframes fadeFloat {
+    0% {
+        opacity: 0.8;
+        transform: translateY(0);
+        box-shadow: 0 0 25px rgba(192, 192, 192, 0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px);
+        box-shadow: 0 0 35px rgba(192, 192, 192, 0.6);
+    }
+    100% {
+        opacity: 0.8;
+        transform: translateY(0);
+        box-shadow: 0 0 25px rgba(192, 192, 192, 0.3);
+    }
+}
+
+/* Pillars Section */
+.pillars {
+    padding: 5rem 0;
+    background: #1f1f1f;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
+
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pillar-card {
+    background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #404040;
+}
+
+.pillar-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(192, 192, 192, 0.2);
+}
+
+/* Pillar Icon dengan Gambar */
+.pillar-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    height: 100px;
+}
+
+.pillar-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s, filter 0.3s;
+    filter: brightness(0.9);
+}
+
+.pillar-card:hover .pillar-icon img {
+    transform: scale(1.15) rotate(5deg);
+    filter: brightness(1.1);
+}
+
+.pillar-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.pillar-card p {
+    color: #a0a0a0;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 0;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 2rem;
+    background: rgba(42, 42, 42, 0.5);
+    border-radius: 15px;
+    border-left: 4px solid #c0c0c0;
+}
+
+.feature-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #606060;
+    min-width: 80px;
+}
+
+.feature-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.feature-item p {
+    color: #a0a0a0;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background: #1f1f1f;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.about-mission,
+.about-vision,
+.about-innovation {
+    background: linear-gradient(135deg, #2a2a2a, #252525);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #404040;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-mission:hover,
+.about-vision:hover,
+.about-innovation:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(192, 192, 192, 0.15);
+}
+
+/* About Icon dengan Gambar */
+.about-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    height: 80px;
+}
+
+.about-icon img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s, filter 0.3s;
+    filter: brightness(0.9);
+}
+
+.about-mission:hover .about-icon img,
+.about-vision:hover .about-icon img,
+.about-innovation:hover .about-icon img {
+    transform: scale(1.1) rotate(-5deg);
+    filter: brightness(1.1);
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    color: #a0a0a0;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(42, 42, 42, 0.5);
+    border-radius: 15px;
+    border: 1px solid #404040;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #c0c0c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #a0a0a0;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #0f0f0f;
+    padding: 4rem 0 2rem;
+    border-top: 1px solid #404040;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Footer Logo */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.footer-about h3 {
+    color: #c0c0c0;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.footer-about p {
+    color: #909090;
+    line-height: 1.8;
+    margin: 1rem 0;
+}
+
+.footer-tagline {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.footer-links h4,
+.footer-features h4,
+.footer-contact h4 {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #404040;
+    padding-bottom: 0.5rem;
+}
+
+.footer-links ul,
+.footer-features ul {
+    list-style: none;
+}
+
+.footer-links li,
+.footer-features li {
+    margin-bottom: 0.7rem;
+}
+
+.footer-links a {
+    color: #909090;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #c0c0c0;
+}
+
+.footer-features li {
+    color: #909090;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #909090;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+    background: rgba(64, 64, 64, 0.2);
+}
+
+.social-link:hover {
+    color: #ffffff;
+    background: rgba(192, 192, 192, 0.1);
+    transform: translateX(5px);
+}
+
+.social-icon {
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #2a2a2a;
+}
+
+.footer-bottom p {
+    color: #707070;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-credit {
+    color: #606060;
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE FIXES
+   ======================================== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .pillar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Mobile Landscape & Small Tablets (768px and below) */
+@media (max-width: 768px) {
+    /* Navbar Responsive */
+    .navbar {
+        padding: 0.8rem 0;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo h2 {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 85vh;
+        padding-top: 2rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+
+    .hero-logo-animated {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* Sections */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .pillar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pillar-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .about-icon img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-number {
+        font-size: 2.5rem;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0.6rem 0;
+    }
+
+    .nav-links {
+        gap: 0.3rem;
+        font-size: 0.75rem;
+    }
+
+    .nav-links a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 80vh;
+        padding-top: 1.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-logo-animated {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Sections */
+    .pillars,
+    .features,
+    .about {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .pillar-card {
+        padding: 1.5rem;
+    }
+
+    .pillar-icon {
+        height: 80px;
+    }
+
+    .pillar-icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .pillar-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .feature-item {
+        padding: 1.5rem;
+    }
+
+    .feature-number {
+        font-size: 2rem;
+        min-width: 60px;
+    }
+
+    .feature-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .about-mission,
+    .about-vision,
+    .about-innovation {
+        padding: 2rem;
+    }
+
+    .about-icon {
+        height: 60px;
+    }
+
+    .about-icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-item {
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+        gap: 2rem;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-features,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .social-links {
+        align-items: center;
+    }
+
+    .social-link {
+        justify-content: center;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
+/* Extra Small Devices (< 375px) */
+@media (max-width: 375px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
+    }
+}

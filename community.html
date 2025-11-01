@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - MentalFit</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="community.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="Logo/logo.jpeg" alt="MentalFit Logo">
+                <h2>MentalFit</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mind.html">Mind</a></li>
+                <li><a href="body.html">Body</a></li>
+                <li><a href="myplan.html">My Plan</a></li>
+                <li><a href="community.html" class="active">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="community-hero">
+        <div class="container">
+            <h1 class="page-title">Community</h1>
+            <p class="page-subtitle">Berbagi progres, motivasi, dan berkembang bersama</p>
+        </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number" id="totalMembers">0</div>
+                    <div class="stat-label">Total Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-number" id="totalPosts">0</div>
+                    <div class="stat-label">Total Posts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-number" id="activeToday">0</div>
+                    <div class="stat-label">Active Today</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Post Section -->
+    <section class="create-post-section">
+        <div class="container">
+            <div class="create-post-card">
+                <h3>📝 Bagikan Progresmu</h3>
+                <form id="postForm" class="post-form">
+                    <input 
+                        type="text" 
+                        id="postAuthor" 
+                        placeholder="Nama kamu..." 
+                        class="post-input"
+                        required
+                    >
+                    <textarea 
+                        id="postContent" 
+                        placeholder="Ceritakan tentang progres atau motivasimu hari ini..."
+                        class="post-textarea"
+                        rows="4"
+                        required
+                    ></textarea>
+                    <div class="post-actions">
+                        <select id="postCategory" class="post-select">
+                            <option value="progress">📊 Progress Update</option>
+                            <option value="motivation">💪 Motivasi</option>
+                            <option value="tips">💡 Tips & Tricks</option>
+                            <option value="question">❓ Pertanyaan</option>
+                        </select>
+                        <button type="submit" class="post-btn">Posting</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Feed -->
+    <section class="feed-section">
+        <div class="container">
+            <div class="feed-layout">
+                
+                <!-- Left: Posts Feed -->
+                <div class="feed-main">
+                    <div class="feed-header">
+                        <h2>🌟 Community Feed</h2>
+                        <div class="filter-tabs">
+                            <button class="filter-tab active" data-filter="all">Semua</button>
+                            <button class="filter-tab" data-filter="progress">Progress</button>
+                            <button class="filter-tab" data-filter="motivation">Motivasi</button>
+                            <button class="filter-tab" data-filter="tips">Tips</button>
+                        </div>
+                    </div>
+
+                    <div class="posts-container" id="postsContainer">
+                        <!-- Posts will be loaded by JavaScript -->
+                        <div class="no-posts">
+                            <p>Belum ada postingan. Jadilah yang pertama berbagi! 🎉</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Sidebar -->
+                <div class="feed-sidebar">
+                    
+                    <!-- Leaderboard -->
+                    <div class="sidebar-card">
+                        <h3>🏆 Top Contributors</h3>
+                        <div class="leaderboard" id="leaderboard">
+                            <!-- Leaderboard will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Community Guidelines -->
+                    <div class="sidebar-card">
+                        <h3>📋 Community Rules</h3>
+                        <ul class="guidelines-list">
+                            <li>Saling menghormati dan mendukung</li>
+                            <li>Berbagi progres yang positif</li>
+                            <li>Hindari konten negatif atau spam</li>
+                            <li>Jaga privasi pribadi</li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="sidebar-card">
+                        <h3>📊 Your Stats</h3>
+                        <div class="user-stats">
+                            <div class="user-stat-item">
+                                <span>Posts:</span>
+                                <strong id="userPosts">0</strong>
+                            </div>
+                            <div class="user-stat-item">
+                                <span>Likes Received:</span>
+                                <strong id="userLikes">0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="Logo/logo.jpeg" alt="MentalFit">
+                        <h3>MentalFit</h3>
+                    </div>
+                    <p>Platform digital yang menggabungkan kesehatan mental dan fisik dalam satu ekosistem.</p>
+                    <div class="footer-tagline">
+                        <strong>Gym for Mind & Body</strong>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mind.html">Mind</a></li>
+                        <li><a href="body.html">Body</a></li>
+                        <li><a href="myplan.html">My Plan</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-features">
+                    <h4>Fitur</h4>
+                    <ul>
+                        <li>🧘 Meditation Guide</li>
+                        <li>💨 Breathing Trainer</li>
+                        <li>💪 Workout Library</li>
+                        <li>📊 Progress Tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Hubungi Kami</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <span class="social-icon">📷</span> Instagram
+                        </a>
+                        <a href="#" class="social-link">
+                            <span class="social-icon">✉️</span> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MentalFit. Semua hak dilindungi.</p>
+                <p class="footer-credit">Made with 💙 for better mental & physical health</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="community.js"></script>
+</body>
+</html>
